@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp7</title>
+</head>
+<style>
+    body{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+</style>
+<body>
+    <hr style="margin-top: 50px;">
+    <br>
+    <h2 style="display: inline;">String of JSObject in Json format is :</h2>
+    <h3 id="space" style="display: inline;"></h3>
+    <hr style="margin-top: 50px;">
+    <br>
+    <h2 style="display: inline;">JSObject of String in Json format is : </h2>
+   
+    <h3 id="s2" style="display: inline;"></h3>
+    <br>
+    <hr>
+    <br>
+    <h2 style="display: inline;">Replaced String of JSObject in Json format is :</h2>
+    <h3 id="s3" style="display: inline;"></h3>
+</body>
+<script>
+
+
+disp = document.getElementById("space")
+disp2 = document.getElementById("s2")
+disp3 = document.getElementById("s3")
+
+
+const data_set = {cricketer: "Rohit", age: 30, team: "Mumbai Indians"};
+const myJSONstr = JSON.stringify(data_set);
+disp.innerHTML = myJSONstr
+
+
+const json_obj = JSON.parse(myJSONstr)
+disp2.innerHTML = json_obj.cricketer + " plays for "  + json_obj.team
+
+
+const replaced_str = myJSONstr.replace("Rohit" ,"Pollard")
+
+
+disp3.innerHTML = replaced_str
+</script>
+</html>
